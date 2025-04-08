@@ -1,4 +1,5 @@
 # Deep Learning - Task 1
+## Roland Gulbinovič - 2416108
 
 The first task requires
 * to create image segmentation model to classify pixels to 3 or more classes.
