@@ -18,8 +18,8 @@ Used Classes:
 ## Dataset
 
 Data used for training and testing:
-* Training - 750 images from [OpenImages](https://storage.googleapis.com/openimages/web/index.html)
-* Test - 100 images from [OpenImages](https://storage.googleapis.com/openimages/web/index.html)
+* Training - 7200 images from [OpenImages](https://storage.googleapis.com/openimages/web/index.html)
+* Test - 500 images from [OpenImages](https://storage.googleapis.com/openimages/web/index.html)
 
 ## Image/Mask pre-processing:
 
