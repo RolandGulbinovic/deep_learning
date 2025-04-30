@@ -27,10 +27,36 @@ The fiftyOne dataset includes annotations for many objects in each image.
 
 To prepare masks - I created an empty mask and then only added annotations for the classes that I'm interested in (Car, Motorcycle, Bus).
 
+## Augmentations
+
+- `A.Affine(scale=(0.9, 1.1), translate_percent=(0.05, 0.05), rotate=(-10, 10), p=0.7)`
+Applies random scaling, shifting, and rotation to simulate camera movement.
+
+- `A.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05, p=0.5)`
+Randomly adjusts brightness, contrast, saturation, and hue to simulate lighting variation.
+
+- `A.RandomBrightnessContrast(p=0.5)`
+Further varies image brightness and contrast to simulate day/night or shadow changes.
+
+- `A.RandomGamma(p=0.3)`
+Modifies image luminance non-linearly to simulate different exposure settings.
+
+- `A.HueSaturationValue(hue_shift_limit=10, sat_shift_limit=15, val_shift_limit=10, p=0.3)`
+Randomly shifts hue, saturation, and value for more diverse color conditions.
+
+- `A.GaussNoise(p=0.2)`
+Adds Gaussian noise to simulate sensor imperfections or low-light artifacts.
+
+- `A.MotionBlur(blur_limit=3, p=0.1)`
+Blurs the image slightly to simulate motion or camera shake.
+
+- `A.CoarseDropout(max_holes=8, max_height=64, max_width=64, p=0.4)`
+Randomly drops out square regions to simulate occlusions or missing data.
+
 ## Models
 
 All models were trained using these parameters:
-- epochs = 15
+- epochs = 30-40
 - batch_size = 8
 - learning_rate = 1-e04
 
